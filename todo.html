@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>오늘의 투두</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    #title {
+      color: blue;
+      text-decoration: underline;
+    }
+    .container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .wrap{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .todo-card {
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 2em;
+      margin: 1em;
+    }
+
+    button:hover {
+      background-color: orange;
+    }
+  </style>
+  <script>
+      function addTodo() {
+        $("#cards").append(`<div class="todo-card">
+        <h3>`+$("#addtodo").val()+`</h3>
+        <button>완료</button>
+      </div>`)
+      }
+  </script>
+  <body>
+    
+    <h1 id="title">오늘 할 일</h1>
+    <div class="container">
+    <div class="wrap" id="cards">
+      <div class="todo-card">
+        <h3>고양이 밥주기</h3>
+        <p>고양이 물, 사료 챙겨주기</p>
+        <button>완료</button>
+      </div>
+
+      <div class="todo-card">
+        <h3>장보기</h3>
+        <p>토마토, 계란, 초코렛 사기</p>
+        <button>완료</button>
+      </div>
+    </div>
+
+    <div class="input_box">
+     <p>추가하기</p>
+     <input type="text" name="addtodo" id="addtodo">
+     <button onclick="addTodo()">추가하기</button>
+    </div>
+</div>
+  </body>
+</html>
